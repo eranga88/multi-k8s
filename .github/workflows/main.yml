@@ -19,5 +19,5 @@ jobs:
         source $HOME/google-cloud-sdk/path.bash.inc
 
      - name: setup kubectl
-       run: gcloud components install kubectl
+       run: gcloud components update
 
