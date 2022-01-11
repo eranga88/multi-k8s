@@ -13,6 +13,6 @@ jobs:
      steps:
      - uses: actions/checkout@v2
 
-     - name: list files
-       run: ls -al
+     - name: setup gcloud
+       run: curl https://sdk.cloud.google.com | bash > /dev/null
 
