@@ -19,5 +19,10 @@ jobs:
         source $HOME/google-cloud-sdk/path.bash.inc
 
      - name: setup kubectl
-       run: gcloud components update
+       run: |
+          curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-247.0.0-linux-x86_64.tar.gz
+          tar zxvf google-cloud-sdk-247.0.0-linux-x86_64.tar.gz google-cloud-sdk
+          mv /usr/lib/google-cloud-sdk /usr/lib/google-cloud-sdk-ORIG
+          mv google-cloud-sdk /usr/lib/
+          gcloud components update
 
